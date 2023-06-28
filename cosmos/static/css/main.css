@@ -112,3 +112,16 @@ ul#horizontal-list a {
     border-top: 3px solid black;
     margin-top: 20vh;
 }
+
+/* End footer section */
+
+/* Profile Section */
+
+.header-text {
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+    left: 20rem;
+    top: 10rem;
+    color: whitesmoke;
+}

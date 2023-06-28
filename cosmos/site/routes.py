@@ -8,3 +8,7 @@ site = Blueprint('site', __name__, template_folder='site_templates')
 def home():
     print('look at this shizzle myu nizzle')
     return render_template('index.html')
+
+@site.route('/profile')
+def profile():
+    return render_template('profile.html')

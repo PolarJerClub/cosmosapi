@@ -18,6 +18,14 @@ background-repeat: no-repeat;
 background-size: cover;
 }
 
+.container {
+    color: aliceblue;
+}
+
+h1 {
+    color: aliceblue;
+}
+
 /* Target Main Image */
 .ct-nav img {
     width: 25%;

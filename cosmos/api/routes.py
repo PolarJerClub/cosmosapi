@@ -24,13 +24,12 @@ def create_cosmo(our_user):
     distance_light_year = request.json['distance_light_year']
     host_star_mass = request.json['host_star_mass']
     host_star_temperature = request.json['host_star_temperature']
-    random_joke = "" # come back and add this shit
     user_token = our_user.token
 
     print(f"User Token: {our_user.token}")
 
     cosmo = Cosmos(name, mass, radius, period, semi_major_axis, temperature, distance_light_year, host_star_mass, 
-                host_star_temperature, random_joke, user_token)
+                host_star_temperature, user_token)
     
     db.session.add(cosmo)
     db.session.commit()
@@ -76,7 +75,6 @@ def update_cosmo(our_user, id):
     cosmo.distance_light_year = request.json['distance_light_year']
     cosmo.host_star_mass = request.json['host_star_mass']
     cosmo.host_star_temperature = request.json['host_star_temperature']
-    cosmo.random_joke = "" # come back and add this shit
     cosmo.user_token = our_user.token
 
     db.session.commit()

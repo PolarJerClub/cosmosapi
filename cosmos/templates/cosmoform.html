@@ -1,0 +1,43 @@
+<form method="POST">
+    <div>
+        {{ form.hidden_tag() }}
+        <fieldset class="name-field">
+            {{ form.name.label }}
+            {{ form.name(class='form-control', placeholder='Name') }}
+        </fieldset>
+        <fieldset class="mass-field">
+            {{ form.mass.label }}
+            {{ form.mass(class='form-control', placeholder='Mass') }}
+        </fieldset>
+        <fieldset class="radius-field">
+            {{ form.radius.label }}
+            {{ form.radius(class='form-control', placeholder='Radius') }}
+        </fieldset>
+        <fieldset class="period-field">
+            {{ form.period.label }}
+            {{ form.period(class='form-control', placeholder='period') }}
+        </fieldset>
+        <fieldset class="semi_major_axis-field">
+            {{ form.semi_major_axis.label }}
+            {{ form.semi_major_axis(class='form-control', placeholder='Semi Major Axis') }}
+        </fieldset>
+        <fieldset class="temperature-field">
+            {{ form.temperature.label }}
+            {{ form.temperature(class='form-control', placeholder='Temperature') }}
+        </fieldset>
+        <fieldset class="light_year-field">
+            {{ form.distance_light_year.label }}
+            {{ form.distance_light_year(class='form-control', placeholder='Distance Light Year') }}
+        </fieldset>
+        <fieldset class="star_mass-field">
+            {{ form.host_star_mass.label }}
+            {{ form.host_star_mass(class='form-control', placeholder='Host Star Mass') }}
+        </fieldset>
+        <fieldset class="star_temperature-field">
+            {{ form.host_star_temperature.label }}
+            {{ form.host_star_temperature(class='form-control', placeholder='Host Star Temperature') }}
+        </fieldset>
+
+        {{ form.submit_button(class='btn btn-primary btn-block mt-2')}}
+    </div>
+</form>

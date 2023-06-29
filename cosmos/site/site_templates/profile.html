@@ -20,6 +20,14 @@
 
 <header class="hero-section">
     <h3 class="header-text">Welcome to Cosmos! {{current_user.username }}</h3>
+    <main class="container cosmo_form">
+        <div class="row">
+            <aside class="col-12 col-md-6">
+                <h2>Create a Planet!!</h2>
+                {% include 'cosmoform.html' %}
+            </aside>
+        </div>
+    </main>
 </header>
 
 <div class="container">
@@ -28,6 +36,26 @@
         <li class="list-group-item">Email: {{ current_user.email }}</li>
         <li class="list-group-item">Token: {{ current_user.token }}</li>
     </ul>
+    <div class="row">
+        {% for cosmo in cosmos %}
+            <div class="card" style="width: 18rem;">
+                <img src="../static/images/planet_creation.jpg" class="card-img-top" alt="cute puppy paw">
+                <div class="card-body">
+                <h5 class="card-title">{{ cosmo.name }}</h5>
+                <p class="card-text">{{ cosmo.mass }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{ cosmo.temperature }}</li>
+                <li class="list-group-item">{{ cosmo.distance_light_year }}</li>
+                <li class="list-group-item">{{ cosmo.random_joke }}</li>
+                </ul>
+                <div class="card-body">
+                <a href="#" class="card-link">Update Cosmo</a>
+                <a href="#" class="card-link">Delete Cosmo</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 </div>
 
 

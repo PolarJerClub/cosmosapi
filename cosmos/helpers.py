@@ -41,8 +41,42 @@ def token_required(our_flask_function):
     return decorated
 
 
-class JSONEncoder(json.JSONDecoder):
+class JSONEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, decimal.Decimal):
             return str(obj)
         return json.JSONEncoder(JSONEncoder, self).default(obj)
+    
+
+def planet_generator():
+    url = "https://planets-by-api-ninjas.p.rapidapi.com/v1/planets"
+
+    querystring = {"name":"Mars"}
+
+    headers = {
+        "X-RapidAPI-Key": "0b0505dffemshaa450b6c1ffa423p17b6cfjsn660a4103b1ce",
+        "X-RapidAPI-Host": "planets-by-api-ninjas.p.rapidapi.com"
+    }
+
+    response = requests.get(url, headers=headers, params=querystring)
+
+    data = response.json()
+
+    return data
+    
+
+# def star_generator():
+#     url = "https://stars-by-api-ninjas.p.rapidapi.com/v1/stars"
+
+#     querystring = {"name":"vega"}
+
+#     headers = {
+#         "X-RapidAPI-Key": "0b0505dffemshaa450b6c1ffa423p17b6cfjsn660a4103b1ce",
+#         "X-RapidAPI-Host": "stars-by-api-ninjas.p.rapidapi.com"
+#     }
+
+#     response = requests.get(url, headers=headers, params=querystring)
+
+#     data = response.json()
+
+#     return data

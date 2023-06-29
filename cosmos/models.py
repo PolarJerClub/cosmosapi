@@ -68,11 +68,11 @@ class Cosmos(db.Model):
     distance_light_year = db.Column(db.String(100))
     host_star_mass = db.Column(db.String(100))
     host_star_temperature = db.Column(db.Numeric(precision=10, scale=2))
-    random_joke = db.Column(db.String, nullable = True)
+    # random_joke = db.Column(db.String, nullable = True)
     user_token = db.Column(db.String, db.ForeignKey('user.token'), nullable = False)
 
     def __init__(self, name, mass, radius, period, semi_major_axis, temperature, distance_light_year,
-                  host_star_mass, host_star_temperature, random_joke, user_token):
+                  host_star_mass, host_star_temperature, user_token):
         self.id = self.set_id()
         self.name = name
         self.mass = mass
@@ -83,7 +83,7 @@ class Cosmos(db.Model):
         self.distance_light_year = distance_light_year
         self.host_star_mass = host_star_mass
         self.host_star_temperature = host_star_temperature
-        self.random_joke = random_joke
+        # self.random_joke = random_joke
         self.user_token = user_token
 
     def set_id(self):
@@ -96,7 +96,7 @@ class Cosmos(db.Model):
 class CosmosSchema(ma.Schema):
     class Meta:
         fields = ['id', 'name', 'mass', 'radius', 'period', 'semi_major_axis', 'temperature',
-                  'distance_light_year', 'host_star_mass', 'host_star_temperature', 'random_joke']
+                  'distance_light_year', 'host_star_mass', 'host_star_temperature']
         
 cosmo_schema = CosmosSchema()
 cosmos_schema = CosmosSchema(many = True)

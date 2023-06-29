@@ -48,10 +48,10 @@ class JSONEncoder(json.JSONEncoder):
         return json.JSONEncoder(JSONEncoder, self).default(obj)
     
 
-def planet_generator():
+def planet_generator(planet):
     url = "https://planets-by-api-ninjas.p.rapidapi.com/v1/planets"
 
-    querystring = {"name":"Mars"}
+    querystring = {"name":planet}
 
     headers = {
         "X-RapidAPI-Key": "0b0505dffemshaa450b6c1ffa423p17b6cfjsn660a4103b1ce",

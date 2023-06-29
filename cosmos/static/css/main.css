@@ -125,3 +125,24 @@ ul#horizontal-list a {
     top: 10rem;
     color: whitesmoke;
 }
+
+.planet-title {
+    padding-top: 50px;
+    font-weight: bolder;
+}
+
+.list-group {
+    padding-bottom: 50px;
+}
+
+.card-title, .card-text {
+    color: black;
+}
+
+.profile-items-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* End profile section */

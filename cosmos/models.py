@@ -83,7 +83,6 @@ class Cosmos(db.Model):
         self.distance_light_year = distance_light_year
         self.host_star_mass = host_star_mass
         self.host_star_temperature = host_star_temperature
-        # self.random_joke = random_joke
         self.user_token = user_token
 
     def set_id(self):

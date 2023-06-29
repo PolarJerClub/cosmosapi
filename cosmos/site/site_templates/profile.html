@@ -19,35 +19,47 @@
 
 
 <header class="hero-section">
-    <h3 class="header-text">Welcome to Cosmos! {{current_user.username }}</h3>
-    <main class="container cosmo_form">
+    <h3 class="header-text">Welcome to Cosmos, {{current_user.username }}!</h3>
+    <h5 class="header-text">Enter planets and stars to build your universe!</h5>
+    <main class="container list-group">
         <div class="row">
+            <aside class = "col-12 col-md-6">
+                <h3>Profile Details</h3>
+                <li class="list-group-item">Email: {{ current_user.email }}</li>
+                <li class="list-group-item">Token: {{ current_user.token }}</li>
+            </aside>
+        </div>
+    </main>
+    <main class="container cosmo_form">
+        <div class="col">
             <aside class="col-12 col-md-6">
-                <h2>Create a Planet!!</h2>
+                <h2>Planet Locator</h2>
                 {% include 'cosmoform.html' %}
+            </aside>
+        </div>
+        <div class="col">
+            <aside class="col-12 col-md-6">
+                <h2>Star Locator</h2>
+                {% include 'starform.html' %}
             </aside>
         </div>
     </main>
 </header>
 
 <div class="container">
-    <h3>Here are your profile details</h3>
-    <ul class="list-group">
-        <li class="list-group-item">Email: {{ current_user.email }}</li>
-        <li class="list-group-item">Token: {{ current_user.token }}</li>
-    </ul>
-    <div class="row">
+    <h1 class="planet-title">Your Cosmos</h1>
+    <div class="profile-items-row">
         {% for cosmo in cosmos %}
             <div class="card" style="width: 18rem;">
-                <img src="../static/images/planet_creation.jpg" class="card-img-top" alt="cute puppy paw">
+                <img src="../static/images/planet_creation.jpg" class="card-img-top" alt="new planet">
                 <div class="card-body">
                 <h5 class="card-title">{{ cosmo.name }}</h5>
-                <p class="card-text">{{ cosmo.mass }}</p>
                 </div>
                 <ul class="list-group list-group-flush">
-                <li class="list-group-item">{{ cosmo.temperature }}</li>
-                <li class="list-group-item">{{ cosmo.distance_light_year }}</li>
-                <li class="list-group-item">{{ cosmo.random_joke }}</li>
+                <li class="list-group-item">Mass: {{ cosmo.mass }}</li>
+                <li class="list-group-item">Temperature: {{ cosmo.temperature }}</li>
+                <li class="list-group-item">Light year distance: {{ cosmo.distance_light_year }}</li>
+                <li class="list-group-item">Radius: {{ cosmo.radius }}</li>
                 </ul>
                 <div class="card-body">
                 <a href="#" class="card-link">Update Cosmo</a>
